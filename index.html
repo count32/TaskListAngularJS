@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		<title>My AngularJS Personal To Do List</title>
+		<script src="js/script.js"></script>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<div>
+			<nav class="topmenu">
+				<div class="logo">Count32</div>
+				<ol>
+					<li><a href="#register">Register</a></li>
+					<li><a href="#users">Users</a></li>
+				</ol>
+			</nav>
+			</div>
+			<div class="wrapper">  <h1>Welcome Back to Your Personalized To Do List</h1>
+			<script>
+todolist = angular.module("todolist", []);
+todolist.controller("t_con", function($scope) {
+	$scope.list = ["Walk the Dog", "Water the Plants", "Rest"];
+	$scope.add_item = function() {
+		$scope.error_msg = "";
+		if (!$scope.get_item) {
+			$scope.error_msg = "You entered a blank entry. This is not allowed."; return;
+		}
+		if ($scope.list.indexOf($scope.get_item) == -1) {
+			$scope.list.push($scope.get_item);
+		} else {
+			$scope.error_msg = "You entered a duplicate entry. This is not allowed.";
+		}
+	}
+	$scope.del_item = function(del_id) {
+		$scope.error_msg = "";
+		$scope.list.splice(del_id, 1);
+	};
+});
+			</script>
+			<div ng-app="todolist" ng-controller="t_con">
+				<ol>
+					<li ng-repeat="x in list">{{x}}<span ng-click="del_item($index);">&times;</span></li>
+				</ol>
+				</br>
+				<input type="text" ng-model="get_item">
+				<button ng-click="add_item()">Add New Task</button>
+				<div>{{error_msg}}</div>
+			</div>
+			</div>
+			<div>
+				<footer class="footer">
+					<div>Company &copy; 2017</div>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>

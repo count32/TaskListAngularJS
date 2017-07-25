@@ -1,0 +1,75 @@
+li > span:hover {  background-color: cornflowerblue;}
+li > span {  padding: 8px;}
+* {
+margin:0;
+padding:0;
+}
+html{height:100%;
+width:100%;
+}
+.clear{  clear:both;}
+/*section {  margin: 10px 0;}*/
+.topmenu{
+  background-color: #333;
+  width:100%;
+  color:red;
+  font-size:1.5em;
+  height:72px;
+}
+.logo {
+  float:left;
+  padding:25px;
+}
+nav {
+  float:right;
+}
+nav li{
+  float:right;
+  list-style-type:none;
+  padding:25px;
+  text-align: center;
+  text-decoration:none;
+}
+
+nav li:hover{
+  background-color:red;
+  color:white;
+  text-decoration:none;
+}
+.wrapper {
+  width: 700px;
+  margin:auto;
+  text-align:center;
+  padding-top:150px;
+  padding-bottom:50px;
+ }
+.wrapper h1 {top:75%;
+	padding:25px;
+} 
+
+.wrapper   * {
+clear:both;
+}
+
+.wrapper li{padding:10px; float:left; margin-left:220px;} 
+
+button{
+  text-align: center;
+  float: center;
+  margin: 50px;
+}
+button:hover{
+  cursor: pointer;
+  cursor: hand;
+}
+
+.footer{
+  background-color:#111;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding:20px;
+  border:1px solid #eee;
+ text-align: center;
+}
